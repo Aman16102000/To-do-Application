@@ -1,26 +1,45 @@
 <html>
     <head>
         <link rel="stylesheet" href="index.css">
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src="index.js"></script>
     </head>
     <body>
-        <div>
-            <div style="background-color:black ;">
-                <h1 style="text-align: center; color: white; font-size: 60px">To-do List</h1>
-            </div>
-            <div>
-
-                <div>
-                    <input type="text" class="inputList" id="addInput" >
-                </div>
-                <div>
-                    <button type="button" class="AddBtn" onclick="add()">Add</button>
+        <div class="container">
+            <div style="background-color:blue;" class="row jumbotron">
+                <div class="col-12 col-sm-12 col-md-12 ">
+                    <div class="text-center "><h1 style="color: white;">To-do List</h1></div>
                 </div>
             </div>
-            <ul id="list">
+            <div class="row">
+                <div class="col-12 col-sm-8 ">
+                    <form>
+                        <div class="form-group" >
+                            <input type="text" class="form-control" id="addInput"  placeholder="Add Task...">
+                        </div>
+                       
+                    </form>
+                </div>
+                <div class="col-12 col-sm-4">
+                    <div> <button style="background-color: blue; color: white;" class="btn" onclick="add()" >Add Task</button></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-12">
 
-            </ul>
-                
+                    <ul id="list" class="list-group">
+                        
+                    </ul>
+                </div>
+            </div>
         </div>
+     
     </body>
 </html>

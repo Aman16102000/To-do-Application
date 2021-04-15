@@ -9,12 +9,11 @@ function add()
     var list=document.createElement("li");
 
     list.setAttribute("id",count);
-    list.setAttribute("class","liDesign");
-    list.setAttribute("style","font-size:18px");
+    list.setAttribute("class","list-group-item list-group-item-primary");
     var completeCheckBox=document.createElement("input");
 
     completeCheckBox.setAttribute("type","checkbox");
-    completeCheckBox.setAttribute("class","checkBoxDesign");
+    completeCheckBox.setAttribute("style","margin-left:20px;");
     var fetchedData=document.getElementById("addInput").value;
 
     var node=document.createTextNode(fetchedData);
@@ -24,11 +23,15 @@ function add()
      del.setAttribute("value",count++)
 
      del.setAttribute("onclick","rem(this)")
-     del.setAttribute("class","btnDesign");
+     del.setAttribute("type","button");
+     del.setAttribute("class","close");
+     var sp=document.createElement("span");
+     sp.setAttribute("aria-hidden","true");
+  //   sp.setAttribute("style","color:black;")
+     var spbtn=document.createTextNode("remove")
+     sp.appendChild(spbtn);
 
-     var deleteBtn=document.createTextNode("remove")
-
-     del.appendChild(deleteBtn);
+     del.appendChild(sp);
 
      list.appendChild(node);
      list.appendChild(completeCheckBox);
