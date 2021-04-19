@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-sm-10 ">
+                <div class="col-12 col-sm-8 ">
                     <form>
                         <div class="form-group" >
                             <input type="text" class="form-control" id="addInput"  placeholder="Add Task...">
@@ -31,6 +31,9 @@
                 </div>
                 <div class="col-12 col-sm-2 ">
                     <div > <button style="background-color: blue; color: white;" class="btn" onclick="add()" >Add Task</button></div>
+                </div>
+                <div class="col-12 col-sm-2 ">
+                    <div > <button id="update" style="background-color: blue; color: white;" class="btn" onclick="update()" disabled>Update</button></div>
                 </div>
             </div>
             <div class="row ">
@@ -53,7 +56,7 @@
                               </button>
                             </div>
                             <div class="modal-body">
-                                 Write something to add...
+                                 <p id="modal_body"></p>
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
