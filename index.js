@@ -1,8 +1,10 @@
 var count=0;
 var chosedLi="";
+
 function addTask()
 {
   let input =document.getElementById("addInput").value;
+ 
   // if input is empty
   if(input=="")
   {
@@ -11,7 +13,7 @@ function addTask()
   }
   else
   {
-    let li=document.createElement("li");
+     let li=document.createElement("li");
     li.setAttribute("id",count);// unique id of every list element
     li.setAttribute("class","list-group-item list-group-item-primary");
     
@@ -33,7 +35,7 @@ function addTask()
     var divCol2=document.createElement("div");
     var checkbox=document.createElement("input");
     var checkBoxId=count+"checkBox";
-    divCol2.setAttribute("class","col-2 col-sm-2")
+    divCol2.setAttribute("class","col-6 col-sm-2")
     checkbox.setAttribute("type","checkbox");
     checkbox.setAttribute("id",checkBoxId);
     checkbox.setAttribute("onclick","isChecked(this)");
@@ -45,7 +47,7 @@ function addTask()
     var divCol3=document.createElement("div");
     var remove=document.createElement("button");
 
-    divCol3.setAttribute("class","col-2 col-sm-2");
+    divCol3.setAttribute("class","col-6 col-sm-2");
     remove.setAttribute("type","button");
     remove.setAttribute("class","btn");
     remove.setAttribute("value",count);
@@ -58,7 +60,7 @@ function addTask()
     // column 4
     var divCol4=document.createElement("div");
     var edit=document.createElement("button");
-    divCol4.setAttribute("class","col-2 col-sm-2");
+    divCol4.setAttribute("class","col-6 col-sm-2");
     edit.setAttribute("class","btn");
     edit.setAttribute("style","background-color:blue; color:white;");
     edit.setAttribute("value",count);
@@ -83,6 +85,7 @@ function addTask()
     document.getElementById("addInput").value="";
     count++;
    
+    document.getElementById("update").removeAttribute("disabled");
   }
   chosedLi="";
 }
@@ -119,6 +122,12 @@ function edit(obj)
 function deleteLi(obj)
 {
   document.getElementById(obj.value).remove();
+ console.log(document.getElementById("list").childNodes.length);
+  if(document.getElementById("list").childNodes.length==1)
+  {
+    document.getElementById("update").setAttribute("disabled","");
+  }
+ // console.log(li);
 }
 
 function isChecked(val)
